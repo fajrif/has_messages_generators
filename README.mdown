@@ -10,7 +10,7 @@ This generator will required you to have Authentication gems such as Devise, to 
 you must include `devise` and `has_messages` in your Gemfile.
 
 	gem "devise"
-	gem "has_messages"
+	gem "has_messages_generators"
 
 After that setup the `devise` properly.
 
