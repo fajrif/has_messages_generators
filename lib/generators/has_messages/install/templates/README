@@ -1,0 +1,26 @@
+
+========================================================================================================================
+
+Some setup you must do manually if you haven't yet:
+
+  1. Ensure you have set authentication filter in app/controllers/messages_controller.rb.
+     For example if using Devise:
+
+       before_filter :authenticate_user!
+
+  2. Ensure you have content placeholder :head in app/views/layouts/application.html.erb.
+     For example:
+
+       <%= yield(:head) %>
+
+  3. Ensure you have flash messages in app/views/layouts/application.html.erb.
+     For example:
+
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+  4. If you like to put some link to your app/views/layouts/application.html.erb.
+
+       <%= link_to "inbox(#{current_user.inbox(:opened => false).count})", messages_path(:inbox), :id => "inbox-link" %>
+
+========================================================================================================================

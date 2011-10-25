@@ -1,0 +1,43 @@
+## Gem Dependency
+- `devise` (works with other authentication gems, but needs some modifications)
+- `jquery-rails`
+- `kaminari`
+- `ancestry`
+
+# Installation Instructions
+
+This generator will required you to have Authentication gems such as Devise, to use this
+you must include `devise` and `has_messages` in your Gemfile.
+
+	gem "devise"
+	gem "has_messages"
+
+After that setup the `devise` properly.
+
+	rails g devise:install
+	rails g devise user		# => user model name example.
+
+After you configure `devise` properly now install `has_messages` with the given USER MODEL NAME
+
+	rails g has_messages:install user
+
+this will generate all the necessary files and code into your Rails app.
+
+At the end of the installation just follow the instructions to modify your layout file.
+
+If you wish to add some links for `devise` and `has_messages` path, just add this code into your layout file.
+
+	<% if user_signed_in? %>
+	  <%= link_to "inbox(#{current_user.inbox(:opened => false).count})", messages_path(:inbox), :id => "inbox-link" %> |
+	  Signed in as <%= current_user.email %> Not You?
+	  <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+	<% else %>
+	  <%= link_to 'Sign up', new_user_registration_path %> or <%= link_to 'Sign in', new_user_session_path %>
+	<% end %>
+
+Run the migration and start the app!
+
+## Found a bug?
+
+This is stil under development mode, if you are having some problem with `has_messages`, 
+feel free to submit an issue here. http://github.com/fajrif/has_messages/issues

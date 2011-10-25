@@ -1,0 +1,10 @@
+Description:
+	The has_messages generator creates a basic messaging system between user in your app.
+
+To install all the files into your app:
+
+	rails g has_messages:install user
+
+  or if you want to completely remove the files from your directory
+
+	rails g has_messages:install user --destroy
