@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.version     = "0.0.1"
   s.authors     = "Fajri Fachriansyah"
   s.email       = "fajri82@gmail.com"
-  s.homepage    = "http://https://github.com/fajrif/has_messages"
+  s.homepage    = "https://github.com/fajrif/has_messages_generators"
   s.summary     = "Simple messaging generators for Rails 3.x"
   s.description = "This is just a simple messaging generators for Rails 3.x, enable user to sending messages across the app."
 
